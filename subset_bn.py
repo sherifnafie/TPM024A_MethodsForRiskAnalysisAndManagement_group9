@@ -238,6 +238,11 @@ def noisy_or(leak: float, causes: list[float]) -> float:
     
 def occurrence_to_rate(fmea_id: str) -> float:
     """Map ordinal FMEA occurrence to a rough residual per-flight-hour rate."""
+    print()
+    print(fmea_id)
+    print(FMEA[fmea_id]["lopa"])
+    print(f"{float(10 ** (-5.0 + 0.42 * float(FMEA[fmea_id]['o']))) :>e}")
+
     return  float(FMEA[fmea_id]["lopa"])
 
 # def fmea_leak(fmea_id: str, scale: float = 0.30) -> float:
